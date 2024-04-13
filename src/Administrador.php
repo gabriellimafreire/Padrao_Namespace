@@ -1,16 +1,13 @@
 <?php
 namespace App\Src;
 
-class Administrador implements interfaceUsuario {
-    protected $nome;
-    protected $login;
-    protected $senha;
-
+class Administrador extends interfaceUsuario {
     public function autenticar(string $login, string $senha): bool {
-        return true;
+  
+      return true;
     }
-
+  
     public function autorizar(): array {
-        return ['gerenciar_usuarios', 'gerenciar_cursos'];
+      return ['gerenciar_usuarios', 'gerenciar_cursos'];
     }
-}
+  }

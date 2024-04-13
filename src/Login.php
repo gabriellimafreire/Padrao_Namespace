@@ -8,26 +8,21 @@ use App\Src\Professor;
 use App\Src\userFactory;
 
 class Login {
-    public function executar($lo,$se) {
+    public function executar($lo, $se) {
         $login = $lo;
         $senha = $se;
-
-        $perfil = 'administrador'; 
-
+    
+        $perfil = 'professor'; 
         $usuario = userFactory::criar($perfil);
-
+    
         if ($usuario->autenticar($login, $senha)) {
-            $autorizacoes = $usuario->autorizar();
-
-            echo "Bem-vindo, $login! Você tem acesso às seguintes funcionalidades: " . implode(', ', $autorizacoes);
-
-          
-            
+          $autorizacoes = $usuario->autorizar();
+          echo "Bem-vindo, $login! Você tem acesso às seguintes funcionalidades: " . implode(', ', $autorizacoes);
         } else {
-            echo 'Login ou senha incorretos.';
+          echo 'Login ou senha incorretos.';
         }
+      }
     }
-}
-
-$login = new Login();
-$login->executar('professor','123');
+    
+    $login = new Login();
+    $login->executar('eu', '123');

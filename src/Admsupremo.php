@@ -1,11 +1,11 @@
 <?php
 namespace App\Src;
 
-class Admsupremo extends Administrador {
+class admSupremo extends Administrador {
     public function autorizar(): array {
-        $autorizacoes = parent::autorizar();
-        $autorizacoes[] = 'configurar_sistema';
-        $autorizacoes[] = 'gerenciar_backups';
-        return $autorizacoes;
+      $autorizacoes = parent::autorizar();
+      $autorizacoes[] = 'configurar_sistema';
+      $autorizacoes[] = 'gerenciar_backups';
+      return $autorizacoes;
     }
-}
+  }

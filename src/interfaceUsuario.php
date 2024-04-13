@@ -1,7 +1,11 @@
 <?php
 namespace App\Src;
 
-interface interfaceUsuario{
-    public function autenticar(string $login, string $senha): bool;
-    public function autorizar(): array;
+abstract class interfaceUsuario{
+  protected $nome;
+  protected $login;
+  protected $senha;
+
+  public abstract function autenticar(string $login, string $senha): bool;
+  public abstract function autorizar(): array;
 }
